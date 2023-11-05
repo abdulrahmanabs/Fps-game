@@ -7,11 +7,11 @@ public class CameraLook : MonoBehaviour
     float xRotation=0;
     Transform Player;
     [SerializeField] float mousexSensitivity=80f,mouseySensitivity=80f;
-    Camera cam;
+    
 
     void Awake()
     {
-        cam=Camera.main;
+       
         Player=GetComponentInParent<PlayerMotor>().transform;
     }
     void Start()
@@ -26,8 +26,8 @@ public class CameraLook : MonoBehaviour
         float mouseY=mouseInput.y*Time.deltaTime*mouseySensitivity;
         xRotation-=mouseY;
         xRotation=Mathf.Clamp(xRotation,-80,80);
-        cam.transform.localRotation= Quaternion.Euler(xRotation,0,0);
-        Player.transform.rotation*=Quaternion.Euler(0,mouseX,0);
+        transform.localRotation= Quaternion.Euler(xRotation,0,0);
+        //Player.transform.rotation*=Quaternion.Euler(0,mouseX,0);
         Player.transform.Rotate(Vector3.up*mouseX);
     }
 }

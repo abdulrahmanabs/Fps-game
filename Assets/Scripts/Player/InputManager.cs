@@ -6,7 +6,7 @@
     [RequireComponent(typeof(PlayerMotor))]
     public class InputManager : MonoBehaviour
     {
-        private PlayerActions playerActions;
+        public  PlayerActions playerActions;
         private PlayerMotor playerMotor;
         private CameraLook cameraLook;
 
